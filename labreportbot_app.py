@@ -10,9 +10,10 @@ from langchain.embeddings import SentenceTransformerEmbeddings
 from langchain.vectorstores import Chroma 
 from langchain.llms import HuggingFacePipeline
 from langchain.chains import RetrievalQA 
-from constants import CHROMA_SETTINGS
 from streamlit_chat import message
 import pdfplumber
+from chromadb.config import Settings 
+
 
 st.set_page_config(layout="wide")
 
@@ -28,6 +29,11 @@ base_model = AutoModelForSeq2SeqLM.from_pretrained(
 )
 
 persist_directory = "db"
+CHROMA_SETTINGS = Settings(
+        chroma_db_impl='duckdb+parquet',
+        persist_directory='db',
+        anonymized_telemetry=False
+)
 
 @st.cache_resource
 def data_ingestion():
