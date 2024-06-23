@@ -5,7 +5,7 @@ torch==2.0.1
 einops==0.6.1
 bitsandbytes==0.41.1
 accelerate==0.21.0
-pdfminer.six==20221105
+pdfminer.six
 bs4==0.0.1
 sentence_transformers
 duckdb==0.7.1
