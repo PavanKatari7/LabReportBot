@@ -139,7 +139,7 @@ def main():
                     st.info(text)
                 for page in pdf.pages:
                     st.info(page.extract_tables())
-            
+                    
         st.markdown("""---""")
 
         st.spinner('Embeddings are in process...')
